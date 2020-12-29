@@ -1,5 +1,7 @@
 package org.viper75.image_search_using_architecture_components.api.service;
 
+import com.google.common.util.concurrent.ListenableFuture;
+
 import org.viper75.image_search_using_architecture_components.BuildConfig;
 import org.viper75.image_search_using_architecture_components.api.responses.UnsplashResponse;
 
@@ -14,5 +16,5 @@ public interface UnsplashApiService {
 
     @Headers({"Accept-Version: v1", "Authorization: Client-ID " + CLIENT_ID})
     @GET("search/photos")
-    UnsplashResponse searchPhotos(@Query("query") String query, @Query("page") int page, @Query("per_page") int perPage);
+    ListenableFuture<UnsplashResponse> searchPhotos(@Query("query") String query, @Query("page") Integer page, @Query("per_page") int perPage);
 }
