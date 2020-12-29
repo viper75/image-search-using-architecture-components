@@ -40,6 +40,7 @@ dependencies {
     def lifecycle_version = "2.2.0"
     def nav_version = "2.3.2"
     def hilt_version = "2.28-alpha"
+    def hilt_viewmodel_version = "1.0.0-alpha02"
 
     /**Default Libraries*/
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -70,6 +71,7 @@ dependencies {
     /**Hilt*/
     implementation "com.google.dagger:hilt-android:$hilt_version"
     annotationProcessor "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_viewmodel_version"
 
     /**Project Lombok*/
     compileOnly 'org.projectlombok:lombok:1.18.12'

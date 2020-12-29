@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 
 import org.viper75.image_search_using_architecture_components.R;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class GalleryFragment extends Fragment {
 
     @Override
