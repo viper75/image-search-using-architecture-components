@@ -15,9 +15,8 @@ import kotlinx.coroutines.CoroutineScope;
 
 public class GalleryViewModel extends ViewModel {
     private final String DEFAULT_SEARCH_QUERY = "cats";
-    private final UnsplashPhotoRepository unsplashPhotoRepository;
+    private UnsplashPhotoRepository unsplashPhotoRepository;
 
-    private MutableLiveData<String> currentQuery = new MutableLiveData<>();
     private LiveData<PagingData<UnsplashPhoto>> photos;
 
     @ViewModelInject
@@ -29,5 +28,9 @@ public class GalleryViewModel extends ViewModel {
     public void searchPhoto(String query) {
         CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
         photos = PagingLiveData.cachedIn(unsplashPhotoRepository.getSearchResults(query), viewModelScope);
+    }
+
+    public LiveData<PagingData<UnsplashPhoto>> getPhotos() {
+        return photos;
     }
 }

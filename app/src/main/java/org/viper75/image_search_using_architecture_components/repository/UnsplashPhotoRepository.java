@@ -15,15 +15,17 @@ import java.util.concurrent.Executor;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
+@Data
 @Singleton
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class UnsplashPhotoRepository {
     @Inject
-    private final UnsplashApiService unsplashApiService;
+    UnsplashApiService unsplashApiService;
     @Inject
-    private final Executor executorService;
+    Executor executorService;
 
     public LiveData<PagingData<UnsplashPhoto>> getSearchResults(String query) {
 

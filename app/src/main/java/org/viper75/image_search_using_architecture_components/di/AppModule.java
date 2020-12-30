@@ -1,6 +1,7 @@
 package org.viper75.image_search_using_architecture_components.di;
 
 import org.viper75.image_search_using_architecture_components.api.service.UnsplashApiService;
+import org.viper75.image_search_using_architecture_components.repository.UnsplashPhotoRepository;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;

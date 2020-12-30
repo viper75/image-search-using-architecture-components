@@ -5,6 +5,7 @@ import android.os.Parcelable;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
@@ -12,9 +13,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@EqualsAndHashCode
 public class UnsplashPhoto implements Parcelable {
-    public String id;
-    public String description;
+    private String id;
+    private String description;
     private UnsplashUser user;
     private UnsplashPhotoUrls urls;
 
